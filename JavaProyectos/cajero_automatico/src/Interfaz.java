@@ -2,6 +2,15 @@ import java.util.Scanner;
 
 public class Interfaz {
     public static void main(String[] args) {
+
+        System.out.println("Introduzca su número de identificación");
+        Scanner scanner = new Scanner(System.in);
+        String identificador = scanner.nextLine();
+        System.out.println("Ahora introduzca su contraseña");
+        String contrasenia = scanner.nextLine();
+        CajeroAutomatico cajero = new CajeroAutomatico(identificador, contrasenia);
+
+
         int opcionSeleccionada;
 
         do {
@@ -13,26 +22,25 @@ public class Interfaz {
             System.out.println("Una vez elegida la opción, pulse la tecla Enter");
             System.out.println("Para salir escriba cualquier otro número");
 
-            Scanner sc = new Scanner(System.in);
 
             //asigna variable a la que se ingrese
-            opcionSeleccionada = sc.nextInt();
+            opcionSeleccionada = scanner.nextInt();
 
             switch (opcionSeleccionada){
                 case 1:
-                    System.out.println("La opción que ha elegido es consultar su saldo");
+                    cajero.mostrarSaldo();
                     break;
                 case 2:
-                    System.out.println("La opción que ha elegido es ingresar dinero");
+                    cajero.ingresarDinero();
                     break;
                 case 3:
-                    System.out.println("La opción que ha elegido es sacar dinero");
+                    cajero.sacarDinero();
                     break;
                 case 4:
-                    System.out.println("La opción que ha elegido es consultar sus últimos movimientos");
+                    cajero.consultarUltimosMovimientos();
                     break;
                 default:
-                    System.out.println("Muchas gracias por usar nuestros servicios");
+                    cajero.salir();
             }
 
 
