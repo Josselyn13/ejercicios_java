@@ -1,5 +1,0 @@
-Hola mundo
-Me llamo Josselyn
-Tengo hambre y me gusta el pozole
-20/julio/2022
-Hubble - Aprender React
